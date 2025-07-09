@@ -1,0 +1,17 @@
+﻿<Window x:Class="GhosTTS.UI.Overlay"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="GhosTTS Overlay"
+        Height="100"
+        Width="400"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="#AA000000"
+        Topmost="True"
+        ResizeMode="NoResize"
+        MouseDown="OverlayWindow_MouseDown">
+    <Grid Margin="10">
+        <TextBox x:Name="OverlayInput" FontSize="16" KeyDown="OverlayInput_KeyDown"
+                 Background="Black" Foreground="White" BorderBrush="Gray"/>
+    </Grid>
+</Window>

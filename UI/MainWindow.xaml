@@ -1,0 +1,119 @@
+﻿<Window x:Class="GhosTTS.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="GhosTTS 👻🗣️" Height="500" Width="302" ResizeMode="NoResize">
+    <Grid>
+        <TabControl>
+            <!-- Main Tab -->
+            <TabItem Header="Main">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBox x:Name="TextInput" Grid.Row="0" TextWrapping="Wrap" AcceptsReturn="True"
+                             FontSize="14" VerticalScrollBarVisibility="Auto" TextChanged="TextInput_TextChanged"/>
+
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,10,0,0">
+                        <TextBlock Text="Voice:" VerticalAlignment="Center" Width="60"/>
+                        <ComboBox x:Name="VoiceSelector" Width="200" SelectionChanged="VoiceSelector_SelectionChanged" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="0,10,0,0">
+                        <CheckBox x:Name="RTChatCheckbox" Content="Real-time Chatting" Checked="RTChatCheckbox_Checked" Unchecked="RTChatCheckbox_Unchecked"/>
+
+                        <TextBlock Text=" ms:" VerticalAlignment="Center" Margin="8,0,0,0"/>
+                        <TextBox  x:Name="DebounceBox" Width="60" Text="500" VerticalAlignment="Center" Margin="2,0,0,0" PreviewTextInput="DebounceBox_PreviewTextInput" LostFocus="DebounceBox_LostFocus"/>
+                    </StackPanel>
+                    
+                    <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+                        <Button x:Name="SpeakButton" Content="Speak" Width="100" Margin="10" Click="SpeakButton_Click"/>
+                        <Button x:Name="StopButton" Content="Stop" Width="100" Margin="10" Click="StopButton_Click"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <!-- Settings Tab -->
+            <TabItem Header="Settings" Height="20" VerticalAlignment="Top">
+                <StackPanel Margin="10">
+                    <TextBlock Text="Audio Output Device:" Margin="0,0,0,5"/>
+                    <ComboBox x:Name="AudioOutputComboBox"
+                          MaxDropDownHeight="300"
+                          IsTextSearchEnabled="True"
+                          HorizontalContentAlignment="Left"
+                          SelectionChanged="AudioOutputComboBox_SelectionChanged"/>
+                    <TextBlock Text="Overlay Transparency:" Margin="0,20,0,5" />
+                    <Slider x:Name="TransparencySlider" Minimum="0.1" Maximum="1" Value="0.6" Width="200"
+                        TickFrequency="0.1" IsSnapToTickEnabled="True" ValueChanged="TransparencySlider_ValueChanged" HorizontalAlignment="Left"/>
+                    <CheckBox x:Name="ClickThroughCheckbox" Content="Enable Click-Through Overlay"
+                        Margin="0,20,0,0" Checked="ClickThroughCheckbox_Checked" Unchecked="ClickThroughCheckbox_Unchecked"/>
+                </StackPanel>
+            </TabItem>
+
+            <!-- About Tab -->
+            <TabItem Header="About">
+                <StackPanel Margin="10">
+                    <TextBlock FontWeight="Bold" FontSize="16">GhosTTS 👻🗣️</TextBlock>
+                    <TextBlock Text="Version 1.0" Margin="0,5,0,0"/>
+                    <TextBlock Text="Developed by Pandaism" Margin="0,5,0,0"/>
+                    <TextBlock Text="GitHub: github.com/pandaism/GhosTTS" Margin="0,10,0,0"/>
+                    <TextBlock TextWrapping="Wrap" Margin="0,10,0,0">
+                        GhosTTS is a text-to-speech tool for gamers, streamers, and creatives. 
+                        It supports real-time messaging, voice emotion (depends on GPL-3 model) and audio routing for Discord, games, and more.
+                    </TextBlock>
+                    <TextBlock x:Name="Credit" TextWrapping="Wrap" Margin="0,10,0,0"/>
+                    <TextBlock TextWrapping="Wrap" FontStyle="Italic" Margin="0,20,0,0" Foreground="Gray" Height="47">
+                        Dedicated to the littlest bean, GhostingZer0 — for being the quiet inspiration behind every voice.
+                    </TextBlock>
+                </StackPanel>
+            </TabItem>
+
+            <!-- Help Tab -->
+            <TabItem Header="Help">
+                <ScrollViewer Padding="12">
+                    <StackPanel>
+                        <TextBlock FontSize="16" FontWeight="Bold"
+                       Text="GhosTTS – Quick Help" Margin="0,0,0,6"/>
+
+                        <TextBlock TextWrapping="Wrap">
+                        • <Bold>Show / hide overlay:</Bold> press <Bold>Ctrl + Shift + T</Bold> any time.
+                        </TextBlock>
+
+                        <TextBlock TextWrapping="Wrap" Margin="0,6,0,0">
+                        •  <Bold>Overlay tricks:</Bold>  
+                          – Drag it with the left mouse button.  
+                          – Press <Bold>Esc</Bold> while it’s focused to hide.  
+                          – Toggle transparency &amp; click-through in <Bold>Settings ▸ Overlay</Bold>.
+                        </TextBlock>
+
+                        <TextBlock TextWrapping="Wrap" Margin="0,6,0,0">
+                        •  <Bold>Close to tray:</Bold>  
+                          Clicking the window’s ✕ button just hides GhosTTS.  
+                          Right-click the tray icon for <Italic>Show / Toggle Overlay / Exit</Italic>.
+                        </TextBlock>
+
+                        <TextBlock TextWrapping="Wrap" Margin="0,6,0,0">
+                        •  <Bold>Audio routing:</Bold>  
+                          Pick <Italic>CABLE Input (VB-Audio)</Italic> as output here,  
+                          then choose <Italic>CABLE Output</Italic> as mic in Discord / games.
+                        </TextBlock>
+
+                        <TextBlock TextWrapping="Wrap" Margin="0,6,0,0">
+                        •  <Bold>Real-time Chat:</Bold>  
+                          Enable the checkbox on the <Italic>Voices</Italic> tab; adjust debounce (ms) for
+                          faster or slower live feedback.
+                        </TextBlock>
+
+                        <TextBlock TextWrapping="Wrap" Margin="0,6,0,0">
+                            For more info visit the project page.
+                        </TextBlock>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
