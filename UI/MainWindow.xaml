@@ -38,8 +38,14 @@
             </TabItem>
 
             <!-- Settings Tab -->
-            <TabItem Header="Settings" Height="20" VerticalAlignment="Top">
+            <TabItem Header="Settings">
                 <StackPanel Margin="10">
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,10">
+                        <TextBlock Text="TTS Server:" Width="65" VerticalAlignment="Center"/>
+                        <TextBox  x:Name="EndpointBox"
+                          Width="195"
+                          LostFocus="EndpointBox_LostFocus"/>
+                    </StackPanel>
                     <TextBlock Text="Audio Output Device:" Margin="0,0,0,5"/>
                     <ComboBox x:Name="AudioOutputComboBox"
                           MaxDropDownHeight="300"

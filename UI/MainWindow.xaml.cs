@@ -78,8 +78,9 @@ namespace GhosTTS.UI
 
             _settings = SettingsManager.Load();
 
-            _ttsManager = new TTSManager("http://localhost:5002/");
-            _overlayWindow = new Overlay(_ttsManager);
+            EndpointBox.Text = _settings.TtsEndpoint;
+            _ttsManager = new TTSManager(_settings.TtsEndpoint);
+            _overlayWindow = new Overlay(_ttsManager, _settings);
             _audioOutputService = new AudioOutputService(_settings.AudioDeviceIndex);
 
             LoadVoices();
@@ -477,6 +478,19 @@ namespace GhosTTS.UI
             {
                 // revert to last good value
                 DebounceBox.Text = _debounceMs.ToString();
+            }
+        }
+        private void EndpointBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            string url = EndpointBox.Text.Trim();
+            if (!url.EndsWith("/")) url += "/";
+
+            if (!string.Equals(url, _settings.TtsEndpoint, StringComparison.OrdinalIgnoreCase))
+            {
+                _settings.TtsEndpoint = url;
+                SettingsManager.Save(_settings);
+
+                _ttsManager.SetEndpoint(url);     
             }
         }
     }

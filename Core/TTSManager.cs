@@ -6,7 +6,7 @@ namespace GhosTTS.Core
     public class TTSManager
     {
         private readonly HttpClient _httpClient;
-        private readonly string _ttsEndpoint;
+        private string _ttsEndpoint;
 
         public string SelectedVoiceId { get; set; } = "p225";
 
@@ -45,6 +45,11 @@ namespace GhosTTS.Core
                 Console.WriteLine($"[TTS Error] {ex.Message}");
                 return null;
             }
+        }
+
+        public void SetEndpoint(string endpoint)
+        {
+            _ttsEndpoint = endpoint.TrimEnd('/');
         }
     }
 }

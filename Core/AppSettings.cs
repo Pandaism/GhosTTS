@@ -9,8 +9,8 @@ namespace GhosTTS.Core
         public int AudioDeviceIndex { get; set; } = 0;
         public double OverlayTransparency { get; set; } = 0.6;
         public bool OverlayClickThrough { get; set; } = false;
-
         public int DebounceMs { get; set; } = 500;
+        public string TtsEndpoint { get; set; } = "http://localhost:5002/";
     }
 
     public static class SettingsManager
