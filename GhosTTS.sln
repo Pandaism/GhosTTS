@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhosTTS", "GhosTTS.csproj", "{BB4D3F2A-9E2C-46D2-AD39-1CF52F301CF0}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "GhosTTS Installer", "..\GhosTTS Installer\GhosTTS Installer.vdproj", "{F106F87C-E719-4620-A077-5DF8210AAF3C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,8 @@ Global
 		{BB4D3F2A-9E2C-46D2-AD39-1CF52F301CF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB4D3F2A-9E2C-46D2-AD39-1CF52F301CF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB4D3F2A-9E2C-46D2-AD39-1CF52F301CF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F106F87C-E719-4620-A077-5DF8210AAF3C}.Debug|Any CPU.ActiveCfg = Debug
+		{F106F87C-E719-4620-A077-5DF8210AAF3C}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

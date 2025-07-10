@@ -45,9 +45,10 @@ namespace GhosTTS.Services
                               DataFlow.Render, DeviceState.Active)[_deviceIndex];
 
             // 4) create WASAPI shared-mode player
-            _player = new WasapiOut(device, AudioClientShareMode.Shared, true, 350)
+            _player = new WasapiOut(device, AudioClientShareMode.Shared, true, 400) // latency 400 ms, event-driven = smooth
             {
-                // latency 350 ms, event-driven = smooth
+                
+                Volume = 0.7f
             };
             _player.Init(resampled);
             _player.Play();

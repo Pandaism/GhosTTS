@@ -71,8 +71,8 @@ namespace GhosTTS.UI
                         "───────────────────────────────────────────\r\n" +
                         "•  Coqui-TTS \r\n" +
                         "https://github.com/coqui-ai/TTS  \r\n\r\n" +
-                        "•  VB-Audio Virtual Cable  \r\n" +
-                        "© VB-Audio Software — used with user-consent installer  \r\n" +
+                        "•  Hi-Fi Audio Virtual Cable  \r\n" +
+                        "© Hi-Fi Audio Software — used with user-consent installer  \r\n" + 
                         "https://vb-audio.com/Cable/  \r\n" +
                         "───────────────────────────────────────────";
 
@@ -135,7 +135,7 @@ namespace GhosTTS.UI
             try
             {
                 string exe = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                                          "Resources", "Drivers", "VBCABLE_Setup_x64.exe");
+                                          "Resources", "Drivers", "HiFiCableAsioBridgeSetup.exe");
 
                 var psi = new ProcessStartInfo
                 {

@@ -23,7 +23,7 @@ is accepted – while staying quietly hidden in your system tray.
 | 😄 **Emotion parser**  | (Model dependent) Auto-detects *happy / sad / angry / confused*  |
 | 🖼 **Drag-anywhere overlay** | Toggle with **Ctrl + Shift + T**, transparent & click-through. |
 | 🚀 **Real-time chatting** | Voice your sentence while you type – debounce slider included. |
-| 🔊 **Virtual-cable routing** | Bundled installer (VB-Cable). Pipes audio to Discord / OBS / games. |
+| 🔊 **Virtual-cable routing** | Bundled installer (Hi-Fi Cable). Pipes audio to Discord / OBS / games. |
 | 🛠 **Open-source C# / WPF** | MIT-friendly code; easy to extend or embed. |
 
 ---
@@ -37,14 +37,14 @@ is accepted – while staying quietly hidden in your system tray.
 
 2. **First run:**  
    When prompted, click **Yes** to install the bundled  
-   **VB-Audio Virtual Cable** (silent, needs admin).
+   **Hi-Fi Audio Virtual Cable** (silent, needs admin).
 
 3. **Route audio:**
 
    | App | Setting |
    |-----|---------|
-   | **GhosTTS Output Device** | `CABLE Input (VB-Audio Virtual Cable)` |
-   | **Discord / OBS Mic** | `CABLE Output (VB-Audio Virtual Cable)` |
+   | **GhosTTS Output Device** | `CABLE Input (VB-Audio Hi-Fi Cable)` |
+   | **Discord / OBS Mic** | `CABLE Output (VB-Audio Hi-Fi Cable)` |
 
 4. **Overlay:** press **Ctrl + Shift + T** → type → **Enter** to speak → **Esc** to hide.
 

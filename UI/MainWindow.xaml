@@ -1,7 +1,7 @@
 ﻿<Window x:Class="GhosTTS.UI.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="GhosTTS 👻🗣️" Height="500" Width="302" ResizeMode="NoResize">
+        Title="GhosTTS 👻🗣️" Height="500" Width="302" ResizeMode="NoResize" Icon="/UI/ghostts.png">
     <Grid>
         <TabControl>
             <!-- Main Tab -->
@@ -72,8 +72,8 @@
                         It supports real-time messaging, voice emotion (depends on GPL-3 model) and audio routing for Discord, games, and more.
                     </TextBlock>
                     <TextBlock x:Name="Credit" TextWrapping="Wrap" Margin="0,10,0,0"/>
-                    <TextBlock TextWrapping="Wrap" FontStyle="Italic" Margin="0,20,0,0" Foreground="Gray" Height="47">
-                        Dedicated to the littlest bean, GhostingZer0 — for being the quiet inspiration behind every voice.
+                    <TextBlock TextWrapping="Wrap" FontStyle="Italic" Margin="0,10,0,0" Foreground="Gray" Height="47">
+                        Dedicated to the littlest bean, GhostingZer0 — for being the quiet inspiration behind every voice. The bean squad loves you, Ghostie!
                     </TextBlock>
                 </StackPanel>
             </TabItem>
@@ -104,7 +104,7 @@
 
                         <TextBlock TextWrapping="Wrap" Margin="0,6,0,0">
                         •  <Bold>Audio routing:</Bold>  
-                          Pick <Italic>CABLE Input (VB-Audio)</Italic> as output here,  
+                          Pick <Italic>CABLE Input (Hi-Fi Audio)</Italic> as output here,  
                           then choose <Italic>CABLE Output</Italic> as mic in Discord / games.
                         </TextBlock>
 
